@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+		xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>de.vertixico</groupId>
+	<artifactId>testESB</artifactId>
+	<version>0.0.01-SNAPSHOT</version>
+	<properties>
+	
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		
+	
+		<camel-core-version>2.19.2</camel-core-version>
+	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>org.apache.camel</groupId>
+			<artifactId>camel-core</artifactId>
+			<version>${camel-core-version}</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.apache.camel</groupId>
+		    <artifactId>camel-eclipse</artifactId>
+		    <version>${camel-core-version}</version>
+		    <!-- use the same version as your Camel core version -->
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.apache.activemq</groupId>
+		    <artifactId>activemq-core</artifactId>
+		    <version>5.6.0</version>
+		</dependency>
+				
+				
+		<dependency> 
+			<groupId>org.apache.activemq</groupId>
+			<artifactId>activemq-camel</artifactId>
+			<version>5.6.0</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.apache.activemq</groupId>
+		    <artifactId>activemq-pool</artifactId>
+		    <version>5.15.0</version>
+		</dependency>
+				
+				
+		<dependency> 
+			<groupId>org.apache.camel</groupId>
+			<artifactId>camel-stream</artifactId>
+			<version>${camel-core-version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.apache.camel</groupId>
+			<artifactId>camel-jms</artifactId>
+			<version>${camel-core-version}</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>javax.jms</groupId>
+		    <artifactId>jms</artifactId>
+		    <version>1.1</version>
+		</dependency>
+
+		<dependency>
+		    <groupId>javax.management.j2ee</groupId>
+		    <artifactId>management-api</artifactId>
+		    <version>1.1-rev-1</version>
+		</dependency>
+
+
+				
+	</dependencies>
+</project>
