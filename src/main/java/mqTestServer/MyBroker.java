@@ -20,23 +20,30 @@ public class MyBroker {
 		try{
 			ConnectionFactory connectionFactory = new ActiveMQConnectionFactory("tcp://0.0.0.0:61616");
 			
-			context.addComponent("activemq", JmsComponent.jmsComponentAutoAcknowledge(connectionFactory));
+			context.addComponent("activemq", 
+						JmsComponent.jmsComponentAutoAcknowledge(connectionFactory));
 			
 			context.addRoutes(new RouteBuilder() {
 				
 				@Override
 				public void configure() throws Exception {
-					// TODO Auto-generated method stub
 					from("activemq:producer")
-					.to("stream:out");
 					
+					.to("stream:out")
+					.to("activemq:topic:consumer");
+					
+					//	Kurzer Test um header einer eingehenden Nachricht anzuzeigen
+//					from("activemq:producer")
+//					.transform()
+//						.headers()
+//					.to("stream:out");
 				}
 			});
 			System.out.println("Before context start");
 			context.start();
-			System.out.println("After context start");
+			System.out.println("Context start");
 			while(true){
-				Thread.sleep(30000);
+				Thread.sleep(Long.MAX_VALUE);
 				System.out.println("I am still active");
 				// Sleep forever and be ready!
 			}
