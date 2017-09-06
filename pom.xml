@@ -15,6 +15,9 @@
 		
 	
 		<camel-core-version>2.19.2</camel-core-version>
+		<mysql-connector-java-version>6.0.5</mysql-connector-java-version>
+		<commons-dbcp2-version>2.1.1</commons-dbcp2-version>
+		
 	</properties>
 	<dependencies>
 		<dependency>
@@ -23,12 +26,12 @@
 			<version>${camel-core-version}</version>
 		</dependency>
 		
-		<dependency>
-		    <groupId>org.apache.camel</groupId>
-		    <artifactId>camel-eclipse</artifactId>
-		    <version>${camel-core-version}</version>
-		    <!-- use the same version as your Camel core version -->
-		</dependency>
+<!-- 		<dependency> -->
+<!-- 		    <groupId>org.apache.camel</groupId> -->
+<!-- 		    <artifactId>camel-eclipse</artifactId> -->
+<!-- 		    <version>${camel-core-version}</version> -->
+		 
+<!-- 		</dependency> -->
 		
 		<dependency>
 		    <groupId>org.apache.activemq</groupId>
@@ -73,7 +76,46 @@
 		    <artifactId>management-api</artifactId>
 		    <version>1.1-rev-1</version>
 		</dependency>
+		
+		<!--  Mysql Database Connector-->
+		
+<!-- 		<dependency> -->
+<!-- 		    <groupId>mysql</groupId> -->
+<!-- 		    <artifactId>mysql-connector-java</artifactId> -->
+<!-- 		    <version>5.1.6</version> -->
+<!-- 		</dependency> -->
+		
+		
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>${mysql-connector-java-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.google.cloud.sql</groupId>
+			<artifactId>mysql-socket-factory-connector-j-6</artifactId>
+			<version>1.0.2</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-dbcp2</artifactId>
+			<version>${commons-dbcp2-version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>commons-logging</groupId>
+					<artifactId>commons-logging</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.apache.activemq</groupId>
+		    <artifactId>kahadb</artifactId>
+		    <version>5.7.0</version>
+		</dependency>
 
+				
 		<!-- 	Spring  -->
 		
 		<dependency>
